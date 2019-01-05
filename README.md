@@ -28,6 +28,8 @@ import SpectatorControls from "./SpectatorControls";
 // + scene / renderer / cemera / geometry setup
 
 const controls = new SpectatorControls(camera);
+controls.enable();
+
 const clock = new THREE.Clock();
 
 function update() {
