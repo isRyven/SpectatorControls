@@ -122,7 +122,7 @@ export default class SpectatorControls {
 		const actualLookSpeed = delta * this.lookSpeed;
 		const lon = ((20 * this._mouseState.x) * actualLookSpeed);
 		const lat = ((20 * this._mouseState.y) * actualLookSpeed);
-		this.camera.rotation.x -= lat;
+		this.camera.rotation.x = Math.max(Math.min(this.camera.rotation.x - lat, Math.PI / 2), - Math.PI / 2);
 		this.camera.rotation.y -= lon;
 		this._mouseState = { x: 0, y: 0 };
 
